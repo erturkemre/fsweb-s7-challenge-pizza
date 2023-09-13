@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { useEffect } from "react";
+
+import axios from "axios";
+import Main from "./layout/Main";
 
 const App = () => {
+
+const[product, setProduct] = useState([]);
+
+// useEffect(()=>{
+//   axios.get(dummyData.json).then(res=> setProduct(res.product))
+  
+// },[])
+
   return (
     <>
-      <h1>Teknolojik Yemekler</h1>
-      <p>Burdaki kodu silip kendi headerınızı ekleyebilirsiniz</p>
+      <Main product={product} />
     </>
   );
 };
