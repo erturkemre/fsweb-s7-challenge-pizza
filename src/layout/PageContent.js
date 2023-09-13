@@ -11,11 +11,14 @@ const PageContent = (product) => {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/order" exact>
+        <Route path="/pizza" exact>
           <OrderPage product={product} />
         </Route>
         <Route path="/success" exact>
           <SuccessPage />
+        </Route>
+        <Route path="*" exact>
+          <p>Sayfa Bulunamadı</p>
         </Route>
       </Switch>
     </div>

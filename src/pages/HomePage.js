@@ -11,35 +11,51 @@ const HomePage = () => {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
-    background-color: #ce2829;
     color: white;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+
+    img{
+      position:absolute;
+      width:100%;
+      height: 100%;
+      z-index: -1;
+      margin-top: 32%;
+    }
   `;
   const P = styled.p`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 4rem;
+    font-size: 2.5rem;
+    margin-top:4%;
     font-family: "Barlow", sans-serif;
+    p{
+      margin:0;
+    }
   `;
 
   const Button = styled.button`
-      width: 10%;
-      height: 20vh;
-      border-radius: 20%;
+      width: 10vw;
+      height: 6vh;
+      border:none;
+      border-radius: 30%;
+      color:#292929;
       background-color:#FDC913;
+      
   `;
+
   return (
     <Container>
+      <img src={mvpBanner} />
       <Header />
       <P>
         <p>KOD ACIKTIRIR</p>
-        PİZZA DOYURUR
+        <p>PİZZA DOYURUR</p>
+        <Link to="/pizza" ><Button id="order-pizza">ACIKTIM</Button></Link>
       </P>
-      <Button onClick>ACIKTIM</Button> //todo 
-      <img src={mvpBanner} />
+      
+      
     </Container>
   );
 };

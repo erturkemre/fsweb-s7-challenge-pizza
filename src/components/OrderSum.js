@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardBody,
@@ -44,7 +45,8 @@ const OrderSum = () => {
         <CardText>Seçimler {}</CardText>
         <CardText >Toplam  {}</CardText>
         </Content>
-        <Button onClick={()=>{}}>SİPARİŞ VER</Button> //todo Link ekle
+        <Link to="/success" ><Button type="submit">SİPARİŞ VER</Button></Link>
+        
       </CardBody>
     </Card>
   );

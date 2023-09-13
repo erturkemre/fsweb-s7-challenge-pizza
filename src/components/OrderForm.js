@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Counter from "./Counter";
 import OrderSum from "./OrderSum";
 
+const formDataInitial = {
+  isim: "",
+  boyut: "",
+  malzeme1: false,
+  malzeme2: false,
+  malzeme3: false,
+  malzeme4: false,
+  malzeme5: false,
+  özel: "",
+};
+
 const OrderForm = () => {
+  const [formdata, setFormData] = useState({ formDataInitial });
+
+  const inputChangeHandler = (event) => {
+    const { value, name, checked, type } = event.target;
+    setFormData({ ...formdata, [name]: type === "checkbox" ? checked : value });
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
   const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -34,7 +56,7 @@ const OrderForm = () => {
 
   const Not = styled.input`
     width: 100%;
-    
+
     background-color: #faf7f2;
     border: none;
     padding: 3%;
@@ -55,27 +77,36 @@ const OrderForm = () => {
     padding-bottom: 35%;
   `;
   const Select = styled.select`
-    border:none;
+    border: none;
     background-color: #faf7f2;
     padding: 10%;
-    border-radius:10%;
+    border-radius: 10%;
   `;
 
   return (
-    <Container>
+    <Container id="pizza-form" onSubmit={submitHandler}>
       <Form1>
         <div>
           <h4>Boyut Seç *</h4>
 
           <div className="form-group">
-            <input name="radio2" type="radio" /> <label check>Küçük</label>
-            <input name="radio2" type="radio" /> <label check>Orta</label>
-            <input name="radio3" type="radio" /> <label check>Büyük</label>
+            <input id="kucuk-boy" name="radio1" type="radio" />{" "}
+            <label htmlFor="kucuk-boy" >
+              Küçük
+            </label>
+            <input id="orta-boy" name="radio2" type="radio" />{" "}
+            <label htmlFor="orta-boy">
+              Orta
+            </label>
+            <input id="buyuk-boy" name="radio3" type="radio" />{" "}
+            <label htmlFor="buyuk-boy">
+              Büyük
+            </label>
           </div>
         </div>
         <div className="option">
           <h4>Hamur Seç *</h4>
-          <Select bsSize="lg" className="mb-3" type="select" >
+          <Select id="size-dropdown" bsSize="lg" className="mb-3" type="select">
             <option selected="selected" disabled>
               --Hamur Kalınlığı Seç--
             </option>
@@ -90,7 +121,10 @@ const OrderForm = () => {
         <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
         <Choice>
           <div>
-            <input type="checkbox" /> <label check>Pepperoni</label>
+            <input id="" type="checkbox" onChange={inputChangeHandler} />{" "}
+            <label check htmlFor="">
+              Pepperoni
+            </label>
             <input type="checkbox" /> <label check>Domates</label>
             <input type="checkbox" /> <label check>Biber</label>
           </div>
@@ -118,6 +152,7 @@ const OrderForm = () => {
       <div>
         <h4>Sipariş Notu</h4>
         <Not
+          id="special-text"
           type="text"
           placeholder="Siparişine eklemek istediğin not var mı?"
         />

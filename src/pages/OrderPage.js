@@ -1,23 +1,29 @@
 import React from "react";
 import Header from "../layout/Header";
 import Banner from "../layout/Banner";
+import Footer from "../layout/Footer";
+import styled from "styled-components";
+import OrderForm from "../components/OrderForm";
 
-const OrderPage = (props) => {
-  const { img, productName, price, description, code, point } = props;
+const OrderPage = (product) => {
+    const Container = styled.div`
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+
+    `;
 
   return (
-    <div>
+    <Container>
       <Header />
-      <Banner
-        img={img}
-        productName={productName}
-        price={price}
-        description={description}
-        code={code}
-        point={point}
-      />
-    </div>
+      <div>
+        <Banner product={product}/>
+        <OrderForm />
+      </div>
+      <Footer />
+    </Container>
   );
 };
 
 export default OrderPage;
+

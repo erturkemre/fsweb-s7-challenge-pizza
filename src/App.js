@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 
 import axios from "axios";
-import Main from "./layout/Main";
+import PageContent from "./layout/PageContent";
 
 const App = () => {
 
@@ -16,7 +16,7 @@ const[product, setProduct] = useState([]);
 
   return (
     <>
-      <Main product={product} />
+      <PageContent product={product} />
     </>
   );
 };
