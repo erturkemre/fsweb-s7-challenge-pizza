@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../layout/Header";
-import Banner from "../layout/Banner";
+import Banner from "../components/Banner";
 import Footer from "../layout/Footer";
 import styled from "styled-components";
 import OrderForm from "../components/OrderForm";
@@ -18,7 +18,7 @@ const OrderPage = (product) => {
       <Header />
       <div>
         <Banner product={product}/>
-        <OrderForm />
+        <OrderForm product={product} />
       </div>
       <Footer />
     </Container>

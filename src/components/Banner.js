@@ -9,17 +9,17 @@ import product from "../dummyData";
 const Banner = (props) => {
   // const { product } = props;
   const Container = styled.div`
-    display:flex;
+    display: flex;
     justify-content: center;
     background-color: #faf7f2;
-    
-    div{
-      text-align: center;
-      width: 55%;
+
+    div {
+      
+      width: 51%;
     }
 
     h3 {
-      text-align:start;
+      text-align: start;
       font-weight: 700;
     }
   `;
@@ -27,17 +27,16 @@ const Banner = (props) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    
-    p {
-      
+
+    div {
+     display:flex;
+     justify-content: space-evenly;
     }
   `;
   const Price = styled.p`
     font-family: "Barlow", sans-serif;
     font-weight: bold;
     font-size: 2rem;
-    padding-right: ;
   `;
 
   return (
@@ -48,8 +47,10 @@ const Banner = (props) => {
         <h3>{product[0].productName}</h3>
         <Inf>
           <Price>{product[0].price}₺</Price>
-          <p>{product[0].point}</p>
-          <p>{product[0].productCode}</p>
+          <div className="d-flex">
+            <p>{product[0].point}</p>
+            <p>{`{${product[0].productCode}}`}</p>
+          </div>
         </Inf>
         <p>{product[0].description}</p>
       </div>

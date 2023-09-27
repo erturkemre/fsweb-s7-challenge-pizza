@@ -6,7 +6,13 @@ const product = [
      "productName": "Terminal Pizza",
      "price": 60,
      "img": "./Assets/adv-aseets/food-1.png",
-     "description": "description 1",
+     "description": `Frontent Dev olarak hala position:absolute kullaniyorsan bu cok aci
+     pizza tam sana göre. Pizza, domates, peynir ve genellikle çesitli
+     diger malzemelerle kaplanmis, daha sonra geleneksel olarak odun
+     atesinde bir firinda yüksek sicaklikta pisirilen, genellikle
+     yuvarlak, düzlestirilmis mayal budday bazli hamurdan olusan italyan
+     kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta
+     denir.`,
      "productCode": "200",
      "point": 4.9,
      "id": "1"

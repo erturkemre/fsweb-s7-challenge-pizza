@@ -28,6 +28,9 @@ const SuccessPage = () =>{
             <Header />
             <P><p>TEBRİKLER!</p>
             SİPARİŞİNİZ ALINDI!</P>
+            <div>
+                
+            </div>
         </Container>
     )
 }
